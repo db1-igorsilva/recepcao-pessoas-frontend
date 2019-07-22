@@ -49,29 +49,7 @@ export default {
                 value: 'remove'
             }
         ],
-        props: [
-            {
-                id: 1,
-                visit_date: 12,
-                start_time: 12,
-                end_time: 14,
-                guest: 'VISITANTE1'
-            },
-            {
-                id: 2,
-                visit_date: 12,
-                start_time: 14,
-                end_time: 15,
-                guest: 'VISITANTE2'
-            },
-            {
-                id: 3,
-                visit_date: 15,
-                start_time: 10,
-                end_time: 15,
-                guest: 'VISITANTE3'
-            }
-        ]
+        visits: [],
       }
     }
 }
