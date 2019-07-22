@@ -1,9 +1,11 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify';
 import App from './App.vue'
 import 'vuetify/dist/vuetify.min.css'
+import Vuetify from 'vuetify';
+import VueRouter from 'vue-router';
 
 Vue.use(Vuetify);
+Vue.use(VueRouter);
 
 new Vue({
   el: '#app',
