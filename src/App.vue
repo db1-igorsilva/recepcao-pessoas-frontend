@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <menu class="menu__header menu__header_color">
+    <menu>
     </menu>
 
     <section class="menu__body">
