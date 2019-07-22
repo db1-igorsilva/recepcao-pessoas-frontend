@@ -22,6 +22,9 @@
 // import { routes } from './routes';
 // import Menu from './shared/menu/Menu.vue';
 export default {
+  components: {
+    // 'menu': Menu
+  }
 }
 </script>
 
