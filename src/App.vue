@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <menu>
-    </menu>
+    <project-menu>
+    </project-menu>
 
     <section class="menu__body">
 
@@ -22,7 +22,7 @@
 import Menu from '../shared/menu/Menu.vue';
 export default {
   components: {
-    'menu': Menu
+    'project-menu': Menu
   }
 }
 </script>
