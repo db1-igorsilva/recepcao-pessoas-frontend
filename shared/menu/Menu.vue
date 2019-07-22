@@ -5,17 +5,17 @@
             <v-spacer/>
         <v-toolbar-items>
             <v-btn flat>
-                <router-link to="/home"> Consulta </router-link>
+                <router-link to=""> Consulta </router-link>
             </v-btn>
             <v-btn flat>
-                <router-link to="/register"> Cadastro </router-link>
+                <router-link to="/cadastro"> Cadastro </router-link>
             </v-btn>
         </v-toolbar-items>
     </v-toolbar>
 </template>
 
 <script>
-// import { routes } from '../../routes.js'
+import { routes } from '../../src/routes.js'
 export default {
 }
 </script>
