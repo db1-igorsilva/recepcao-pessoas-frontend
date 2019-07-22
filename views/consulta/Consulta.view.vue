@@ -62,6 +62,12 @@ export default {
             }
             return this.visits;
         }
+    },
+    created () {
+        this.service = new VisitService(this.$resource);
+        this.service.getAll()
+            .then(allVisits => this.visits = allVisits,
+            error => console.log(error));
     }
 }
 </script>
