@@ -1,5 +1,8 @@
 <template>
-    <h1> CONSULTA </h1>
+    <v-data-table>
+        <template v-slot:items="props">
+        </template>
+    </v-data-table>
 </template>
 
 <script>
