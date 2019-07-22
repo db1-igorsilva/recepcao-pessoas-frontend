@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header class="menu__header menu__header_color">
-    </header>
+    <menu class="menu__header menu__header_color">
+    </menu>
 
     <section class="menu__body">
 
