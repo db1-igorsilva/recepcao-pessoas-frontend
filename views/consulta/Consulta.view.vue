@@ -1,14 +1,21 @@
 <template>
-    <v-data-table :headers="headers" :items="props">
-        <template v-slot:items="props">
-            <td class="text-xs-right"> {{ props.item.id }} </td>
-            <td class="text-xs-right"> {{ props.item.visit_date }} </td>
-            <td class="text-xs-right"> {{ props.item.start_time }} </td>
-            <td class="text-xs-right"> {{ props.item.end_time }} </td>
-            <td class="text-xs-right"> {{ props.item.guest }} </td>
-            <td class="text-xs-right"> <button> X </button> </td>
-        </template>
-    </v-data-table>
+    <div>
+        <center>
+            <v-flex class="not_full_width">
+                <v-text-field label="Regular"/>
+            </v-flex>
+            <v-data-table :headers="headers" :items="props" class="not_full_width">
+                <template v-slot:items="props">
+                    <td class="text-xs-right"> {{ props.item.id }} </td>
+                    <td class="text-xs-right"> {{ props.item.visit_date }} </td>
+                    <td class="text-xs-right"> {{ props.item.start_time }} </td>
+                    <td class="text-xs-right"> {{ props.item.end_time }} </td>
+                    <td class="text-xs-right"> {{ props.item.guest }} </td>
+                    <td class="text-xs-right"> <button> X </button> </td>
+                </template>
+            </v-data-table>
+        </center>
+    </div>
 </template>
 
 <script>
@@ -71,5 +78,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
+.not_full_width
+    width: 95%
 </style>
