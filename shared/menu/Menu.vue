@@ -1,14 +1,14 @@
 <template>
-    <v-toolbar>
-        <v-toolbar-side-icon> <img src="https://www.andrecelestino.com/wp-content/uploads/2016/12/db1-global-software-logo.png"/> </v-toolbar-side-icon>
+    <v-toolbar color="#8F1C2C" class="menu__header">
+        <v-toolbar-side-icon> <v-img src="https://db1global.sharepoint.com/sites/intranet/Central%20de%20documentos%20PDF/Imagens%20Oficiais/ORG_LOGO_DB1_BRANCO.png"/> </v-toolbar-side-icon>
         <v-toolbar-title> DB1 Global Software </v-toolbar-title>
             <v-spacer/>
-        <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-items>
             <v-btn flat>
-                <router-link> Consulta </router-link>
+                <router-link to="/home"> Consulta </router-link>
             </v-btn>
             <v-btn flat>
-                <router-link> Cadastro </router-link>
+                <router-link to="/register"> Cadastro </router-link>
             </v-btn>
         </v-toolbar-items>
     </v-toolbar>
@@ -21,4 +21,6 @@ export default {
 </script>
 
 <style lang="sass">
+.menu__header
+    height: 100px
 </style>
