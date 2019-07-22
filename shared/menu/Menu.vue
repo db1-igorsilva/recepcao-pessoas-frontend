@@ -1,6 +1,6 @@
 <template>
     <v-toolbar>
-        <v-toolbar-side-icon> </v-toolbar-side-icon>
+        <v-toolbar-side-icon> <img src="https://www.andrecelestino.com/wp-content/uploads/2016/12/db1-global-software-logo.png"/> </v-toolbar-side-icon>
         <v-toolbar-title> DB1 Global Software </v-toolbar-title>
             <v-spacer/>
         <v-toolbar-items class="hidden-sm-and-down">
