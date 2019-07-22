@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Menu from './shared/menu/Menu.vue';
+import Menu from '../shared/menu/Menu.vue';
 export default {
   components: {
     'menu': Menu
