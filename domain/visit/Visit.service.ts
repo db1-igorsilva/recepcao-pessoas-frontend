@@ -21,4 +21,9 @@ export default class VisitService {
                 throw new Error('NullPointerException');
             });
     }
+    find(id) {
+        return this._resource
+            .get({ id })
+            .then(getResponse => getResponse.json());
+    }
 }
