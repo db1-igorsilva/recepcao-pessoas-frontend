@@ -3,17 +3,8 @@
     <project-menu>
     </project-menu>
 
-    <section class="menu__body">
-
-      <nav class="menu__nav-bar menu__nav-bar_color">
-      </nav>
-
-      <section class="menu__content menu__content_color">
-        <div class="menu__text"> CONTENT 1 TEST </div>
-        <div class="menu__text"> CONTENT 2 TEST </div>
-        <div class="menu__text"> CONTENT 3 TEST </div>
-      </section>
-
+    <section>
+      <router-view/>
     </section>
   </div>
 </template>
@@ -28,7 +19,4 @@ export default {
 </script>
 
 <style lang="sass">
-
-  @import './sass/main.sass'
-
 </style>
