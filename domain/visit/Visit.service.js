@@ -1,7 +1,6 @@
 export default class VisitService {
-    _resource;
     constructor(resource) {
-        this._resource = resource();
+        this._resource = resource('/visit/getAll');
     }
     save(visit) {
         if (visit._id) {
