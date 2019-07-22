@@ -52,6 +52,15 @@ export default {
         visits: [],
         typed_filter: ''
       }
+    },
+    computed: {
+        filteredVisits() {
+            if (this.typed_filter) {
+                let filtered = new RegExp(this.typed_filter.trim, 'i')
+                return this.visits.filter(visit => filtered.test(visit.title));
+            }
+            return this.visits;
+        }
     }
 }
 </script>
