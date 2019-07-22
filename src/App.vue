@@ -19,6 +19,8 @@
 </template>
 
 <script>
+// import { routes } from './routes';
+// import Menu from './shared/menu/Menu.vue';
 export default {
 }
 </script>
