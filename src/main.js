@@ -8,6 +8,8 @@ import { routes } from './routes';
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 
+const router = new VueRouter( { routes } );
+
 new Vue({
   el: '#app',
   render: h => h(App)
