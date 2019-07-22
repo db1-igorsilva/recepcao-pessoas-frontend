@@ -26,4 +26,12 @@ export default class VisitService {
             .get({ id })
             .then(getResponse => getResponse.json());
     }
+    delete(id) {
+        return this._resource
+            .delete({ id })
+            .then(null, error => {
+                console.log(error);
+                throw new Error('Visit can\'t be removed.');
+            });
+    }
 }
