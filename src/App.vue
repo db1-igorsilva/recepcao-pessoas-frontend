@@ -24,6 +24,11 @@
 export default {
   components: {
     // 'menu': Menu
+  },
+  data () {
+    return {
+      // routes
+    }
   }
 }
 </script>
