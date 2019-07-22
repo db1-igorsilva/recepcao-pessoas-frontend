@@ -1,7 +1,7 @@
 <template>
     <v-toolbar>
         <v-toolbar-side-icon> </v-toolbar-side-icon>
-        <v-toolbar-title> DB1 Global Software <v-toolbar-title>
+        <v-toolbar-title> DB1 Global Software </v-toolbar-title>
             <v-spacer/>
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn flat>
