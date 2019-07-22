@@ -5,7 +5,7 @@
             <v-spacer/>
         <v-toolbar-items>
             <v-btn flat>
-                <router-link to=""> Consulta </router-link>
+                <router-link to="/consulta"> Consulta </router-link>
             </v-btn>
             <v-btn flat>
                 <router-link to="/cadastro"> Cadastro </router-link>
