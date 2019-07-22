@@ -2,15 +2,15 @@
     <div>
         <center>
             <v-flex class="not_full_width">
-                <v-text-field label="Regular"/>
+                <v-text-field label="Nome do Visitante" @input="typed_filter = $event.target.value"/>
             </v-flex>
-            <v-data-table :headers="headers" :items="visits" class="not_full_width">
-                <template v-slot:items="visits">
-                    <td class="text-xs-right"> {{ visits.item.id }} </td>
-                    <td class="text-xs-right"> {{ visits.item.visit_date }} </td>
-                    <td class="text-xs-right"> {{ visits.item.start_time }} </td>
-                    <td class="text-xs-right"> {{ visits.item.end_time }} </td>
-                    <td class="text-xs-right"> {{ visits.item.guest }} </td>
+            <v-data-table :headers="headers" :items="filteredVisits" class="not_full_width">
+                <template v-slot:items="filteredVisits">
+                    <td class="text-xs-right"> {{ filteredVisits.item.id }} </td>
+                    <td class="text-xs-right"> {{ filteredVisits.item.visit_date }} </td>
+                    <td class="text-xs-right"> {{ filteredVisits.item.start_time }} </td>
+                    <td class="text-xs-right"> {{ filteredVisits.item.end_time }} </td>
+                    <td class="text-xs-right"> {{ filteredVisits.item.guest }} </td>
                     <td class="text-xs-right"> <button> X </button> </td>
                 </template>
             </v-data-table>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import VisitService from '../../domain/visit/Visit.service.ts';
+import VisitService from '../../domain/visit/Visit.service';
 export default {
     data () {
       return {
