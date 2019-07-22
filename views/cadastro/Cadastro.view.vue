@@ -1,5 +1,5 @@
 <template>
-    
+    <h1> CADASTRO </h1>
 </template>
 
 <script>
