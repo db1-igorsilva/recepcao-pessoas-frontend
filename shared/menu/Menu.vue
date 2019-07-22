@@ -16,6 +16,12 @@
 
 <script>
 export default {
+    props: {
+        routes: {
+            type: Array,
+            required: true
+        }
+    }
 }
 </script>
 
