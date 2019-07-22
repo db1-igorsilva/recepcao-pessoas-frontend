@@ -49,14 +49,7 @@ export default {
                 value: 'remove'
             }
         ],
-        visits: [{
-            id: 1,
-            visit_date: 2,
-            start_time: 15,
-            end_time: 18,
-            guest: 'VISITA1',
-            remove: 'X'
-        }],
+        visits: [],
         typed_filter: ''
       }
     },
