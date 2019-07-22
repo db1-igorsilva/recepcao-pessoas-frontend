@@ -50,6 +50,7 @@ export default {
             }
         ],
         visits: [],
+        typed_filter: ''
       }
     }
 }
