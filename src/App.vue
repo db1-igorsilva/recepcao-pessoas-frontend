@@ -23,11 +23,6 @@ import Menu from './shared/menu/Menu.vue';
 export default {
   components: {
     'menu': Menu
-  },
-  data () {
-    return {
-      // routes
-    }
   }
 }
 </script>
