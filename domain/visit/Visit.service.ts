@@ -12,4 +12,13 @@ export default class VisitService {
                 .save(visit);
         }
     }
+    getAll() {
+        return this._resource
+            .query()
+            .then(getResponse => getResponse.json(),
+            error => {
+                console.log(error);
+                throw new Error('NullPointerException');
+            });
+    }
 }
