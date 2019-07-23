@@ -1,6 +1,6 @@
 <template>
     <center>
-        <v-form v-model="valid" class="not_full_width">
+        <v-form v-model="valid" class="not_full_width" @submit.prevent="save()">
             <v-text-field
                 label="Nome do Convidado"
                 :counter="160"
