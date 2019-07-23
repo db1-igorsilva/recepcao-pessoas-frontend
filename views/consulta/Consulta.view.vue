@@ -46,6 +46,10 @@ export default {
                 value: 'guest'
             },
             {
+                text: 'Welcome Text',
+                value: 'welcome_text'
+            },
+            {
                 text: 'Delete',
                 value: 'remove'
             }
