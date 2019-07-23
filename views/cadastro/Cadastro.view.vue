@@ -4,10 +4,17 @@
             <v-text-field
                 label="Nome do Convidado"
                 :counter="160"
-                required/>
+                v-validate="'required'"
+                id="guest"
+                name="guest"/>
+            <span v-show="errors.has('guest')"> Field Nome do Convidado can't be null </span>
             <v-text-field
                 label="Texto de Boas-Vindas"
-                :counter="500"/>
+                :counter="500"
+                v-validate="'required'"
+                id="welcome_text"
+                name="welcome_text"/>
+            <span v-show="errors.has('welcome_text')"> Field Texto de Boas-Vindas can't be null </span>
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
                 <input type="date" name="visit_date"/>
