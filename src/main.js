@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VeeValidate from 'vee-validate';
 import { routes } from './routes';
+import axios from 'axios';
 
 Vue.use(Vuetify);
 Vue.use(VueRouter);
@@ -17,6 +18,10 @@ const router = new VueRouter( {
   routes,
   mode: 'history'
 } );
+
+export const http = axios.create({
+  baseURL: 'http://localhost:3000/visit/'
+});
 
 new Vue({
   el: '#app',
