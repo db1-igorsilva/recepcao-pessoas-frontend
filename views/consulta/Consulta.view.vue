@@ -12,7 +12,7 @@
                     <td class="text-xs-right"> {{ filteredVisits.item.end_time }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.guest }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.welcome_text }} </td>
-                    <td class="text-xs-right"> <button> X </button> </td>
+                    <td class="text-xs-right"> <button @click="remove(filteredVisits.item)"> X </button> </td>
                 </template>
             </v-data-table>
         </center>
@@ -107,6 +107,19 @@ export default {
                 return this.visits.filter(visit => filtered.test(visit.guest));
             }
             return this.visits;
+        }
+    },
+    methods: {
+        remove (visit) {
+            alert(visit.id);
+            this.service.delete(visit.id)
+                .then(() => {
+                    let index = this.visits.indexOf(visit);
+                    this.visits.splice(index, 1);
+                },
+                error => {
+                    console.log(error);
+                });
         }
     },
     created () {
