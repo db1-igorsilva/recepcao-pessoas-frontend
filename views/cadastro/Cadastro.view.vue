@@ -6,22 +6,24 @@
                 :counter="160"
                 v-validate="'required'"
                 id="guest"
-                name="guest"/>
+                name="guest"
+                v-model="visit.guest"/>
             <span v-show="errors.has('guest')"> Field Nome do Convidado can't be null </span>
             <v-text-field
                 label="Texto de Boas-Vindas"
                 :counter="500"
                 v-validate="'required'"
                 id="welcome_text"
-                name="welcome_text"/>
+                name="welcome_text"
+                v-model="visit.welcome_text"/>
             <span v-show="errors.has('welcome_text')"> Field Texto de Boas-Vindas can't be null </span>
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
-                <input type="date" id="visit_date" name="visit_date"/>
+                <input type="date" id="visit_date" name="visit_date" v-model="visit.visit_date"/>
                 <label class="datetime time_label"> Início da Apresentação </label>
-                <input type="time" id="start_time" name="start_time"/>
+                <input type="time" id="start_time" name="start_time" v-model="visit.start_time"/>
                 <label class="datetime time_label"> Fim da Apresentação </label>
-                <input type="time" id="end_time" name="end_time"/>
+                <input type="time" id="end_time" name="end_time" v-model="visit.end_time"/>
             </div>
 
             <button type="submit"> SUBMIT </button>
@@ -30,13 +32,20 @@
 </template>
 
 <script>
+import Visit from '../../domain/visit/Visit.entity';
 export default {
+    data() {
+        return {
+            visit: new Visit()
+        }
+    },
     methods: {
         save() {
             this.$validator
                 .validateAll()
                 .then(success => {
                     if (success) {
+                        alert('saved');
                         this.service
                             .save(this.visit)
                             .then(() => {
