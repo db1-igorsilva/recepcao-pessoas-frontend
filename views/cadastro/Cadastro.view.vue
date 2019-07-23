@@ -36,7 +36,8 @@ import Visit from '../../domain/visit/Visit.entity';
 export default {
     data() {
         return {
-            visit: new Visit()
+            visit: new Visit(),
+            id: this.$route.params.id
         }
     },
     methods: {
@@ -54,6 +55,14 @@ export default {
                             error => alert('Can\'t save'));
                     }
                 })
+        }
+    },
+    created() {
+        this.service = new VisitService(this.$resource);
+        if (this.id) {
+            this.service
+                .find(this.id)
+                .then(visit => this.visit = visit);
         }
     }
 }
