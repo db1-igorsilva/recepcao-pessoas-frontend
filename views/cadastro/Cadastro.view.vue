@@ -1,6 +1,6 @@
 <template>
     <center>
-        <v-form v-model="valid" class="not_full_width" @submit.prevent="save()">
+        <v-form class="not_full_width" @submit.prevent="save()">
             <v-text-field
                 label="Nome do Convidado"
                 :counter="160"
@@ -17,12 +17,14 @@
             <span v-show="errors.has('welcome_text')"> Field Texto de Boas-Vindas can't be null </span>
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
-                <input type="date" name="visit_date"/>
+                <input type="date" id="visit_date" name="visit_date"/>
                 <label class="datetime time_label"> Início da Apresentação </label>
-                <input type="time" name="start_time"/>
+                <input type="time" id="start_time" name="start_time"/>
                 <label class="datetime time_label"> Fim da Apresentação </label>
-                <input type="time" name="end_time"/>
+                <input type="time" id="end_time" name="end_time"/>
             </div>
+
+            <button type="submit"> SUBMIT </button>
         </v-form>
     </center>
 </template>
