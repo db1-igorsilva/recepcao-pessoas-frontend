@@ -33,6 +33,8 @@
 
 <script>
 import Visit from '../../domain/visit/Visit.entity';
+import VisitService from '../../domain/visit/Visit.service';
+
 export default {
     data() {
         return {
@@ -42,23 +44,14 @@ export default {
     },
     methods: {
         save() {
-            this.$validator
-                .validateAll()
-                .then(success => {
-                    if (success) {
-                        alert('saved');
-                        this.service
-                            .save(this.visit)
-                            .then(() => {
-                                if (this.id) this.$router.push({ name: 'consulta' });
-                            },
-                            error => alert('Can\'t save'));
-                    }
+            alert('Pré-Salvo');
+            VisitService.save(this.visit)
+                .then(getResponse => {
+                    alert('Salvo');
                 })
         }
     },
     created() {
-        this.service = new VisitService(this.$resource);
         if (this.id) {
             this.service
                 .find(this.id)
