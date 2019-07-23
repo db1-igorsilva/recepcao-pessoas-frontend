@@ -29,7 +29,22 @@
 
 <script>
 export default {
-    
+    methods: {
+        save() {
+            this.$validator
+                .validateAll()
+                .then(success => {
+                    if (success) {
+                        this.service
+                            .save(this.visit)
+                            .then(() => {
+                                if (this.id) this.$router.push({ name: 'consulta' });
+                            },
+                            error => alert('Can\'t save'));
+                    }
+                })
+        }
+    }
 }
 </script>
 
