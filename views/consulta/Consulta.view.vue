@@ -1,8 +1,8 @@
 <template>
     <div>
         <center>
-            <v-flex class="not_full_width">
-                <v-text-field label="Nome do Visitante" @input="typed_filter = $event.target.value"/>
+            <v-flex class="not_full_width" @input="typed_filter = $event.target.value">
+                <v-text-field label="Nome do Visitante"/>
             </v-flex>
             <v-data-table :headers="headers" :items="filteredVisits" class="not_full_width">
                 <template v-slot:items="filteredVisits">
@@ -103,8 +103,8 @@ export default {
     computed: {
         filteredVisits() {
             if (this.typed_filter) {
-                let filtered = new RegExp(this.typed_filter.trim, 'i')
-                return this.visits.filter(visit => filtered.test(visit.title));
+                let filtered = new RegExp(this.typed_filter.trim(), 'i')
+                return this.visits.filter(visit => filtered.test(visit.guest));
             }
             return this.visits;
         }
