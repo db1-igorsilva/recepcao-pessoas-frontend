@@ -17,4 +17,5 @@ export default {
     delete:(visit) => {
         return http.delete(visit.id);
     }
+    
 }
