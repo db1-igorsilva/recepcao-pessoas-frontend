@@ -8,10 +8,8 @@ export default {
     getAll:() => {
         return http.get('getAll');
     },
-    find:(id) => {
-        return this._resource
-            .get({ id })
-            .then(getResponse => getResponse.json());
+    update:(visit) => {
+        return http.put(visit.id, visit);
     },
     delete:(visit) => {
         return http.delete(visit.id);
