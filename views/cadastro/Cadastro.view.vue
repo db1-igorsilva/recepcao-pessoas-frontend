@@ -13,17 +13,17 @@
                 label="Texto de Boas-Vindas"
                 :counter="500"
                 v-validate="'required'"
-                id="welcome_text"
-                name="welcome_text"
-                v-model="visit.welcome_text"/>
-            <span v-show="errors.has('welcome_text')"> Field Texto de Boas-Vindas can't be null </span>
+                id="welcomeText"
+                name="welcomeText"
+                v-model="visit.welcomeText"/>
+            <span v-show="errors.has('welcomeText')"> Field Texto de Boas-Vindas can't be null </span>
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
-                <input type="date" id="visit_date" name="visit_date" v-model="visit.visit_date"/>
+                <input type="date" id="date" name="date" v-model="visit.date"/>
                 <label class="datetime time_label"> Início da Apresentação </label>
-                <input type="time" id="start_time" name="start_time" v-model="visit.start_time"/>
+                <input type="time" id="presentationStartTime" name="presentationStartTime" v-model="visit.presentationStartTime"/>
                 <label class="datetime time_label"> Fim da Apresentação </label>
-                <input type="time" id="end_time" name="end_time" v-model="visit.end_time"/>
+                <input type="time" id="presentationEndTime" name="presentationEndTime" v-model="visit.presentationEndTime"/>
             </div>
 
             <button type="submit"> SUBMIT </button>
@@ -44,7 +44,7 @@ export default {
     },
     methods: {
         save() {
-            alert('Pré-Salvo');
+            alert(this.visit.guest + ' ' + this.visit.welcomeText + ' ' + this.visit.date + ' ' + this.visit.presentationStartTime + ' ' + this.visit.presentationEndTime);
             VisitService.save(this.visit)
                 .then(getResponse => {
                     alert('Salvo');
