@@ -63,6 +63,7 @@
 import Visit from '../../domain/visit/Visit.entity';
 import Person from '../../domain/person/Person.entity';
 import VisitService from '../../domain/visit/Visit.service.ts';
+import PersonService from '../../domain/person/Person.service.ts';
 
 export default {
     data() {
