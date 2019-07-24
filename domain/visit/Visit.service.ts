@@ -4,18 +4,18 @@ export default {
     
     save:(visit) => {
         if(!visit.id) {
-            return http.post('post', visit);
+            return http.post('visit/post', visit);
         }
         return http.put(visit.id, visit);
     },
     getAll:() => {
-        return http.get('getAll');
+        return http.get('visit/getAll');
     },
     find:(id) => {
-        return http.get('getOne/' + id);
+        return http.get('visit/getOne/' + id);
     },
     delete:(visit) => {
-        return http.delete(visit.id);
+        return http.delete('visit/' + visit.id);
     }
     
 }
