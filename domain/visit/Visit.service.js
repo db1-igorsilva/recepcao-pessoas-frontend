@@ -14,6 +14,6 @@ export default {
             .then(getResponse => getResponse.json());
     },
     delete:(visit) => {
-        return http.delete('', { data: visit.id })
+        return http.delete(visit.id);
     }
 }
