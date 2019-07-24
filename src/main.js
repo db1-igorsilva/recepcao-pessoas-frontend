@@ -20,7 +20,7 @@ const router = new VueRouter( {
 } );
 
 export const http = axios.create({
-  baseURL: 'http://localhost:3000/visit/'
+  baseURL: 'http://localhost:3000/'
 });
 
 new Vue({
