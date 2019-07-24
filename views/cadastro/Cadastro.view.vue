@@ -61,6 +61,7 @@
 
 <script>
 import Visit from '../../domain/visit/Visit.entity';
+import Person from '../../domain/person/Person.entity';
 import VisitService from '../../domain/visit/Visit.service.ts';
 
 export default {
@@ -80,10 +81,7 @@ export default {
                 }
             ],
             persons: [],
-            person: {
-                name: '',
-                cpf: ''
-            }
+            person: new Person()
         }
     },
     methods: {
@@ -95,7 +93,8 @@ export default {
             
         },
         addPerson() {
-            this.persons.push(person);
+            this.persons.push(this.person);
+            this.person = new Person();
         }
     },
     created() {
