@@ -3,10 +3,10 @@ import { http } from '../../src/main.js';
 export default {
     
     save:(visit) => {
-        if(visit.id) {
+        if(!visit.id) {
             return http.post('post', visit);
         }
-        return http.put(visit.id, visit);
+        return http.put(visit);
     },
     getAll:() => {
         return http.get('getAll');
