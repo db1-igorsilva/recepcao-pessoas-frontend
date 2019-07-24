@@ -26,6 +26,34 @@
                 <input type="time" id="presentationEndTime" name="presentationEndTime" v-model="visit.presentationEndTime"/>
             </div>
 
+            <v-form class="not_full_width" @submit.prevent="addPerson()">
+                <v-text-field
+                    label="Nome da Pessoa"
+                    :counter="160"
+                    v-validate="'required'"
+                    id="name"
+                    name="name"
+                    v-model="person.name"/>
+                <v-text-field
+                    label="CPF da Pessoa"
+                    :counter="160"
+                    v-validate="'required'"
+                    id="cpf"
+                    name="cpf"
+                    v-model="person.cpf"/>
+                <table class="not_full_width">
+                    <tr>
+                        <td> NAME </td>
+                        <td> CPF </td>
+                    </tr>
+                    <tr v-for="(person, p) of persons" :key="p">
+                        <td> {{ person.name }} </td>
+                        <td> {{ person.cpf }} </td>
+                    </tr>
+                </table>
+                <button type="submit"> ADD PERSON </button>
+            </v-form>
+            <br><br><br>
             <button type="submit"> SUBMIT </button>
         </v-form>
     </center>
@@ -39,7 +67,23 @@ export default {
     data() {
         return {
             visit: new Visit(),
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            headers: [
+                {
+                    text: 'name',
+                    align: 'left',
+                    value: 'name'
+                },
+                {
+                    text: 'cpf',
+                    value: 'cpf'
+                }
+            ],
+            persons: [],
+            person: {
+                name: '',
+                cpf: ''
+            }
         }
     },
     methods: {
@@ -49,6 +93,9 @@ export default {
                     this.$router.push({ name: 'consulta' })
                 })
             
+        },
+        addPerson() {
+            this.persons.push(person);
         }
     },
     created() {
