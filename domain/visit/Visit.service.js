@@ -11,6 +11,9 @@ export default {
     getAll:() => {
         return http.get('getAll');
     },
+    find:(id) => {
+        return http.get('getOne/' + id);
+    },
     delete:(visit) => {
         return http.delete(visit.id);
     }
