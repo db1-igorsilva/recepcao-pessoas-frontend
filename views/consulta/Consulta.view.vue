@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import VisitService from '../../domain/visit/Visit.service';
+import VisitService from '../../domain/visit/Visit.service.ts';
 
 export default {
     data () {

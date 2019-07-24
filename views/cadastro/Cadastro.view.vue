@@ -33,7 +33,7 @@
 
 <script>
 import Visit from '../../domain/visit/Visit.entity';
-import VisitService from '../../domain/visit/Visit.service';
+import VisitService from '../../domain/visit/Visit.service.ts';
 
 export default {
     data() {
