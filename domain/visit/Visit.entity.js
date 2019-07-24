@@ -1,9 +1,10 @@
 export default class Visit {
-    constructor(id, date, start_time, end_time, guest) {
+    constructor(id, date, presentationStartTime, presentationEndTime, guest, welcomeText) {
         this.id = id;
         this.date = date;
-        this.start_time = start_time;
-        this.end_time = end_time;
+        this.presentationStartTime = presentationStartTime;
+        this.presentationEndTime = presentationEndTime;
         this.guest = guest;
+        this.welcomeText = welcomeText;
     }
 }
