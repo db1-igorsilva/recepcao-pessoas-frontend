@@ -71,7 +71,7 @@ export default {
     },
     methods: {
         remove (visit) {
-            this.service.delete(visit.id)
+            VisitService.delete(visit)
                 .then(() => {
                     let index = this.visits.indexOf(visit);
                     this.visits.splice(index, 1);
