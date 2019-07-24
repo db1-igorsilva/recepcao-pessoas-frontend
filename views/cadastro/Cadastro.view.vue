@@ -45,9 +45,10 @@ export default {
     methods: {
         save() {
             VisitService.save(this.visit)
-                .then(getResponse => {
-                    alert('Salvo');
+                .then(() => {
+                    this.$router.push({ name: 'consulta' })
                 })
+            
         }
     },
     created() {
