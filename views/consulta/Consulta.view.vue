@@ -12,7 +12,7 @@
                     <td class="text-xs-right"> {{ filteredVisits.item.presentationEndTime }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.guest }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.welcomeText }} </td>
-                    <td class="text-xs-right"> <router-link :to="{name: 'cadastro', params: { id: filteredVisits.item.id }}"> <button> Update </button> </router-link> </td>
+                    <td class="text-xs-right"> <router-link :to="{name: 'altera', params: { id: filteredVisits.item.id }}"> <button> Update </button> </router-link> </td>
                     <td class="text-xs-right"> <button @click="remove(filteredVisits.item)"> Delete </button> </td>
                 </template>
             </v-data-table>
