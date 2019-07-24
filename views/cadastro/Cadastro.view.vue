@@ -44,7 +44,6 @@ export default {
     },
     methods: {
         save() {
-            alert(this.visit.guest + ' ' + this.visit.welcomeText + ' ' + this.visit.date + ' ' + this.visit.presentationStartTime + ' ' + this.visit.presentationEndTime);
             VisitService.save(this.visit)
                 .then(getResponse => {
                     alert('Salvo');
@@ -53,9 +52,10 @@ export default {
     },
     created() {
         if (this.id) {
-            this.service
-                .find(this.id)
-                .then(visit => this.visit = visit);
+            VisitService.find(this.id)
+                .then(visit => {
+                    this.visit = visit.data;
+                })
         }
     }
 }
