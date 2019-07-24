@@ -12,7 +12,8 @@
                     <td class="text-xs-right"> {{ filteredVisits.item.presentationEndTime }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.guest }} </td>
                     <td class="text-xs-right"> {{ filteredVisits.item.welcomeText }} </td>
-                    <td class="text-xs-right"> <button @click="remove(filteredVisits.item)"> X </button> </td>
+                    <td class="text-xs-right"> <router-link :to="{name: 'cadastro'}"> <button> Update </button> </router-link> </td>
+                    <td class="text-xs-right"> <button @click="remove(filteredVisits.item)"> Delete </button> </td>
                 </template>
             </v-data-table>
         </center>
@@ -50,6 +51,10 @@ export default {
             {
                 text: 'Welcome Text',
                 value: 'welcome_text'
+            },
+            {
+                text: 'Update',
+                value: 'update'
             },
             {
                 text: 'Delete',
