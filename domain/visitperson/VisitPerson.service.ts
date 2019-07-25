@@ -9,8 +9,8 @@ export default {
     getAll:() => {
         return http.get('visitPerson/getAll');
     },
-    delete:(visit) => {
-        return http.delete('visitPerson/' + visit.id);
+    delete:(visitPerson) => {
+        return http.delete('visitPerson/' + visitPerson.id);
     }
     
 }
