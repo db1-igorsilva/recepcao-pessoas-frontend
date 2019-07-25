@@ -64,6 +64,7 @@ import Visit from '../../domain/visit/Visit.entity';
 import Person from '../../domain/person/Person.entity';
 import VisitService from '../../domain/visit/Visit.service.ts';
 import PersonService from '../../domain/person/Person.service.ts';
+import VisitPersonService from '../../domain/visitperson/VisitPerson.service.ts';
 
 export default {
     data() {
@@ -82,18 +83,25 @@ export default {
                 }
             ],
             persons: [],
-            person: new Person()
+            person: new Person(),
+            idToSave: ''
         }
     },
     methods: {
         save() {
-            this.persons.map(person => {
-                PersonService.save(person);
-            });
             VisitService.save(this.visit)
-                .then(() => {
-                    this.$router.push({ name: 'consulta' });
-                })
+            .then(response => {
+                this.idToSave = response.data.id;
+                this.persons
+                    .map(person => {
+                        PersonService.save(person).then(resp => {
+                            VisitPersonService.save(resp.data.id, this.idToSave);
+                        });
+                    })
+            })
+            .then(() => {
+                this.$router.push({ name: 'consulta' });
+            })
             
         },
         addPerson() {
