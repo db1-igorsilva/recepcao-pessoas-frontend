@@ -94,7 +94,13 @@ export default {
             VisitService.find(this.id)
                 .then(visit => {
                     this.visit = visit.data;
+                });
+            VisitPersonService.getAll().then(response => {
+                let filteredResponse = response.data.filter(resp => this.id == resp.visit);
+                filteredResponse.map(filteredResponseItem => {
+                    this.persons.push(filteredResponseItem.person);
                 })
+            });
         }
     }
 }
