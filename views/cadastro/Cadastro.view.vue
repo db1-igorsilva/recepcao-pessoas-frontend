@@ -33,7 +33,7 @@
                     v-validate="'required'"
                     id="name"
                     name="name"
-                    v-model="person.name"/>
+                    v-model="person"/>
                 <table class="not_full_width">
                     <tr>
                         <td> NAME </td>
