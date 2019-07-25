@@ -38,7 +38,10 @@
                     <tr>
                         <td> NAME </td>
                     </tr>
-                    <tr v-for="(person, p) of persons" :key="p">
+                    <tr v-for="(person, per) of onCreatePersons" :key="per">
+                        <td> {{ person }} </td>
+                    </tr>
+                    <tr v-for="(person, p) of persons" :key="`A-${p}`">
                         <td> {{ person }} </td>
                     </tr>
                 </table>
@@ -66,6 +69,7 @@ export default {
                     value: 'name'
                 }
             ],
+            onCreatePersons: [],
             persons: [],
             person: ''
         }
@@ -98,7 +102,7 @@ export default {
             VisitPersonService.getAll().then(response => {
                 let filteredResponse = response.data.filter(resp => this.id == resp.visit);
                 filteredResponse.map(filteredResponseItem => {
-                    this.persons.push(filteredResponseItem.person);
+                    this.onCreatePersons.push(filteredResponseItem.person);
                 })
             });
         }
