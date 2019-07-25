@@ -87,7 +87,13 @@ export default {
     },
     methods: {
         save() {
-            this.persons.map(person => PersonService.save(person));
+            this.persons.map(person => {
+                if (!PersonService.getOne(person)) {
+                    PersonService.save(person);
+                } else {
+                    
+                }
+            });
             VisitService.save(this.visit)
                 .then(() => {
                     this.$router.push({ name: 'consulta' });
