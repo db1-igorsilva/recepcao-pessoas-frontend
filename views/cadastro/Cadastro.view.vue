@@ -34,21 +34,12 @@
                     id="name"
                     name="name"
                     v-model="person.name"/>
-                <v-text-field
-                    label="CPF da Pessoa"
-                    :counter="160"
-                    v-validate="'required'"
-                    id="cpf"
-                    name="cpf"
-                    v-model="person.cpf"/>
                 <table class="not_full_width">
                     <tr>
                         <td> NAME </td>
-                        <td> CPF </td>
                     </tr>
                     <tr v-for="(person, p) of persons" :key="p">
-                        <td> {{ person.name }} </td>
-                        <td> {{ person.cpf }} </td>
+                        <td> {{ person }} </td>
                     </tr>
                 </table>
                 <button type="submit"> ADD PERSON </button>
@@ -61,9 +52,7 @@
 
 <script>
 import Visit from '../../domain/visit/Visit.entity';
-import Person from '../../domain/person/Person.entity';
 import VisitService from '../../domain/visit/Visit.service.ts';
-import PersonService from '../../domain/person/Person.service.ts';
 import VisitPersonService from '../../domain/visitperson/VisitPerson.service.ts';
 
 export default {
@@ -74,17 +63,11 @@ export default {
             headers: [
                 {
                     text: 'name',
-                    align: 'left',
                     value: 'name'
-                },
-                {
-                    text: 'cpf',
-                    value: 'cpf'
                 }
             ],
             persons: [],
-            person: new Person(),
-            idToSave: ''
+            person: ''
         }
     },
     methods: {
@@ -94,9 +77,7 @@ export default {
                 this.idToSave = response.data.id;
                 this.persons
                     .map(person => {
-                        PersonService.save(person).then(resp => {
-                            VisitPersonService.save(resp.data.id, this.idToSave);
-                        });
+                        VisitPersonService.save(person, this.idToSave);
                     })
             })
             .then(() => {
@@ -106,7 +87,6 @@ export default {
         },
         addPerson() {
             this.persons.push(this.person);
-            this.person = new Person();
         }
     },
     created() {
