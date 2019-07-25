@@ -45,7 +45,7 @@
                     </tr>
                     <tr v-for="(person, p) of persons" :key="`A-${p}`">
                         <td> {{ person }} </td>
-                        <td> <h2 @click.prevent="removeFromPersons(person)"> X </h2> </td>
+                        <td> <button @click.prevent="removeFromPersons(person)"> X </button> </td>
                     </tr>
                 </table>
                 <button type="submit"> ADD PERSON </button>
@@ -106,14 +106,8 @@ export default {
                 });
         },
         removeFromPersons (person) {
-            VisitPersonService.delete(person, this.idToSave)
-                .then(() => {
-                    let index = this.persons.indexOf(person);
-                    this.persons.splice(index, 1);
-                },
-                error => {
-                    console.log(error);
-                });
+            let index = this.persons.indexOf(person);
+            this.persons.splice(index, 1);
         }
     },
     created() {
