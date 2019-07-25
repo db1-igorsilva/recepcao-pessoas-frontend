@@ -88,11 +88,7 @@ export default {
     methods: {
         save() {
             this.persons.map(person => {
-                if (!PersonService.getOne(person)) {
-                    PersonService.save(person);
-                } else {
-                    
-                }
+                PersonService.save(person);
             });
             VisitService.save(this.visit)
                 .then(() => {
