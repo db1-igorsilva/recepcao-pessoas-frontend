@@ -6,7 +6,7 @@ export default {
         if(!visit.id) {
             return http.post('visit/post', visit);
         }
-        return http.put(visit.id, visit);
+        return http.put('visit/' + visit.id, visit);
     },
     getAll:() => {
         return http.get('visit/getAll');
