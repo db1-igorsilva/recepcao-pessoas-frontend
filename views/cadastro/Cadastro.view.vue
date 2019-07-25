@@ -37,12 +37,15 @@
                 <table class="not_full_width">
                     <tr>
                         <td> NAME </td>
+                        <td> DELETE </td>
                     </tr>
-                    <tr v-for="(person, per) of onCreatePersons" :key="per">
-                        <td> {{ person }} </td>
+                    <tr v-for="(visitPerson, per) of onCreatePersons" :key="per">
+                        <td> {{ visitPerson.person }} </td>
+                        <td> <button @click.prevent="removeFromCreatedPersons(visitPerson)"> X </button> </td>
                     </tr>
                     <tr v-for="(person, p) of persons" :key="`A-${p}`">
                         <td> {{ person }} </td>
+                        <td> <h2 @click.prevent="removeFromPersons(person)"> X </h2> </td>
                     </tr>
                 </table>
                 <button type="submit"> ADD PERSON </button>
@@ -91,6 +94,26 @@ export default {
         },
         addPerson() {
             this.persons.push(this.person);
+        },
+        removeFromCreatedPersons (visitPerson) {
+            VisitPersonService.delete(visitPerson, this.idToSave)
+                .then(() => {
+                    let index = this.onCreatePersons.indexOf(visitPerson);
+                    this.onCreatePersons.splice(index, 1);
+                },
+                error => {
+                    console.log(error);
+                });
+        },
+        removeFromPersons (person) {
+            VisitPersonService.delete(person, this.idToSave)
+                .then(() => {
+                    let index = this.persons.indexOf(person);
+                    this.persons.splice(index, 1);
+                },
+                error => {
+                    console.log(error);
+                });
         }
     },
     created() {
@@ -101,9 +124,7 @@ export default {
                 });
             VisitPersonService.getAll().then(response => {
                 let filteredResponse = response.data.filter(resp => this.id == resp.visit);
-                filteredResponse.map(filteredResponseItem => {
-                    this.onCreatePersons.push(filteredResponseItem.person);
-                })
+                this.onCreatePersons = filteredResponse;
             });
         }
     }
