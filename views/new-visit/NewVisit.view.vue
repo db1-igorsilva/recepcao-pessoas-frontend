@@ -135,7 +135,6 @@ export default {
     flex-direction: column
     text-align: left
     .time_label
-        padding-bottom: 10px
         padding-top: 10px
 .button
     border: 1px solid black

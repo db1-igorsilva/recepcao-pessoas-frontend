@@ -1,11 +1,18 @@
 <template>
-    <div>
-        <center>
-            <v-flex class="not_full_width" @input="typed_filter = $event.target.value">
+    <center>
+        <div class="not_full_width">
+            <v-flex @input="typed_filter = $event.target.value">
                 <v-text-field label="Guest Name"/>
             </v-flex>
-            <input type="date" id="compareStartDate" name="compareStartDate" @input="compareStartDate = $event.target.value"/>
-            <input type="date" id="compareEndDate" name="compareEndDate" @input="compareEndDate = $event.target.value"/>
+            <div class="datetime">
+                <label class="datetime time_label"> First Date </label>
+                <input type="date" id="compareStartDate" name="compareStartDate" class="datetime__field" @input="compareStartDate = $event.target.value"/>
+                <label class="datetime time_label"> Last Date </label>
+                <input type="date" id="compareEndDate" name="compareEndDate" class="datetime__field" @input="compareEndDate = $event.target.value"/>
+            </div>
+
+            <br>
+
             <v-data-table :headers="headers" :items="filteredVisits" class="not_full_width elevation-1">
                 <template v-slot:items="filteredVisits">
                     <td> {{ filteredVisits.item.id }} </td>
@@ -18,8 +25,8 @@
                     <td> <v-btn class="button" @click="remove(filteredVisits.item)"> Delete </v-btn> </td>
                 </template>
             </v-data-table>
-        </center>
-    </div>
+        </div>
+    </center>
 </template>
 
 <script>
@@ -112,4 +119,17 @@ export default {
 .button
     border: 1px solid black
     text-decoration: none
+.datetime__field
+    border-bottom: 1px solid #888
+    padding: 1%
+    padding-bottom: 0.5%
+    padding-left: 0
+.datetime
+    width: 100%
+    height: 75%
+    display: flex
+    flex-direction: column
+    text-align: left
+    .time_label
+        padding-top: 10px
 </style>
