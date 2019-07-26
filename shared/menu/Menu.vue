@@ -26,7 +26,7 @@ export default {
 <style lang="sass">
 .menu__header
     height: 100px
-    font-family: 'Helvetica', sans-serif
+    font-family: 'Flexo', sans-serif
     text-decoration: none
     color: #000
     display: flex
