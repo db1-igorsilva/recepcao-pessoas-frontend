@@ -11,10 +11,14 @@
 
 <script>
 import Menu from '../shared/menu/Menu.vue';
-export default {
+
+@Component({
   components: {
-    'project-menu': Menu
+    Menu
   }
+})
+
+export default class App extends Vue {
 }
 </script>
 
