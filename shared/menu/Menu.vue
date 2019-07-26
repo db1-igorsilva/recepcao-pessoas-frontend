@@ -8,10 +8,10 @@
 
         <v-toolbar-items>
             <router-link to="/" class="menu__header">
-                <v-btn flat class="menu__header_button"> Consulta </v-btn>
+                <v-btn flat class="menu__header_button" style="color: #FFF"> Consulta </v-btn>
             </router-link>
             <router-link to="/cadastro" class="menu__header">
-                <v-btn flat class="menu__header_button"> Cadastro </v-btn>
+                <v-btn flat class="menu__header_button" style="color: #FFF"> Cadastro </v-btn>
             </router-link>
         </v-toolbar-items>
     </v-toolbar>
@@ -27,7 +27,6 @@ export default {
 .menu__header
     height: 100px
     text-decoration: none
-    color: #000
     display: flex
     flex-direction: column
     &_db1info
@@ -37,7 +36,4 @@ export default {
         font-size: 2em
     &_button
         font-size: 1.5em
-.separate_in_columns
-    display: flex
-    flex-direction: column
 </style>
