@@ -1,15 +1,18 @@
 <template>
     <v-toolbar color="#8F1C2C" class="menu__header">
-        <v-toolbar-side-icon> <v-img src="https://db1global.sharepoint.com/sites/intranet/Central%20de%20documentos%20PDF/Imagens%20Oficiais/ORG_LOGO_DB1_BRANCO.png"/> </v-toolbar-side-icon>
-        <v-toolbar-title class="title"> DB1 Global Software </v-toolbar-title>
+        <router-link to="/" class="menu__header_db1info">
+            <img class="menu__header" src="https://db1global.sharepoint.com/sites/intranet/Central%20de%20documentos%20PDF/Imagens%20Oficiais/ORG_LOGO_DB1_BRANCO.png"/>
+        </router-link>
+
         <v-spacer/>
+
         <v-toolbar-items>
-            <v-btn flat class="menu__header">
-                <router-link to="/consulta" class="menu__header_button"> Consulta </router-link>
-            </v-btn>
-            <v-btn flat class="menu__header">
-                <router-link to="/cadastro" class="menu__header_button"> Cadastro </router-link>
-            </v-btn>
+            <router-link to="/" class="menu__header">
+                <v-btn flat class="menu__header_button"> Consulta </v-btn>
+            </router-link>
+            <router-link to="/cadastro" class="menu__header">
+                <v-btn flat class="menu__header_button"> Cadastro </v-btn>
+            </router-link>
         </v-toolbar-items>
     </v-toolbar>
 </template>
@@ -23,15 +26,19 @@ export default {
 <style lang="sass">
 .menu__header
     height: 100px
-    &_db1infos
-        width: 75%
+    font-family: 'Helvetica', sans-serif
+    text-decoration: none
+    color: #000
+    display: flex
+    flex-direction: column
+    &_db1info
+        height: 100%
     &_title
-        display: flex
-        flex-direction: row
+        height: 100%
+        font-size: 2em
     &_button
-        display: flex
-        flex-direction: row
         font-size: 1.5em
-        text-decoration: none
-        color: #000
+.separate_in_columns
+    display: flex
+    flex-direction: column
 </style>
