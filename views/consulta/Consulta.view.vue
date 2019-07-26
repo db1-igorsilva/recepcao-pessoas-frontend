@@ -2,7 +2,7 @@
     <div>
         <center>
             <v-flex class="not_full_width" @input="typed_filter = $event.target.value">
-                <v-text-field label="Nome do Visitante"/>
+                <v-text-field label="Guest Name"/>
             </v-flex>
             <input type="date" id="compareStartDate" name="compareStartDate" @input="compareStartDate = $event.target.value"/>
             <input type="date" id="compareEndDate" name="compareEndDate" @input="compareEndDate = $event.target.value"/>
