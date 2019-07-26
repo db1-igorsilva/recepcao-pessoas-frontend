@@ -1,6 +1,7 @@
 <template>
     <center>
         <v-form class="not_full_width" @submit.prevent="save()">
+
             <v-text-field
                 label="Nome do Convidado"
                 :counter="160"
@@ -9,6 +10,7 @@
                 name="guest"
                 v-model="visit.guest"/>
             <span v-show="errors.has('guest')"> Field Nome do Convidado can't be null </span>
+
             <v-text-field
                 label="Texto de Boas-Vindas"
                 :counter="500"
@@ -17,11 +19,14 @@
                 name="welcomeText"
                 v-model="visit.welcomeText"/>
             <span v-show="errors.has('welcomeText')"> Field Texto de Boas-Vindas can't be null </span>
+
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
-                <input type="date" id="date" name="date" class="datetime__field" v-model="visit.date"/>
+                <input type="date" v-validate="'required'" id="date" name="date" class="datetime__field" v-model="visit.date"/>
+
                 <label class="datetime time_label"> Início da Apresentação </label>
                 <input type="time" id="presentationStartTime" name="presentationStartTime" class="datetime__field" v-model="visit.presentationStartTime"/>
+
                 <label class="datetime time_label"> Fim da Apresentação </label>
                 <input type="time" id="presentationEndTime" name="presentationEndTime" class="datetime__field" v-model="visit.presentationEndTime"/>
             </div>
@@ -30,27 +35,28 @@
                 <v-text-field
                     label="Nome da Pessoa"
                     :counter="160"
-                    v-validate="'required'"
                     id="name"
                     name="name"
                     v-model="person"/>
-                <table class="half_width">
-                    <tr>
-                        <td> NAME </td>
-                        <td> DELETE </td>
-                    </tr>
-                    <tr v-for="(visitPerson, per) of onCreatePersons" :key="per">
-                        <td> {{ visitPerson.person }} </td>
-                        <td> <button @click.prevent="removeFromCreatedPersons(visitPerson)"> X </button> </td>
-                    </tr>
-                    <tr v-for="(person, p) of persons" :key="`A-${p}`">
-                        <td> {{ person }} </td>
-                        <td> <button @click.prevent="removeFromPersons(person)"> X </button> </td>
-                    </tr>
-                </table>
                 <v-btn class="button" type="submit"> ADD PERSON </v-btn>
             </v-form>
+
+            <table class="half_width">
+                <tr>
+                    <td> NAME </td>
+                    <td> DELETE </td>
+                </tr>
+                <tr v-for="(visitPerson, per) of onCreatePersons" :key="per">
+                    <td> {{ visitPerson.person }} </td>
+                    <td> <button @click.prevent="removeFromCreatedPersons(visitPerson)"> X </button> </td>
+                </tr>
+                <tr v-for="(person, p) of persons" :key="`A-${p}`">
+                    <td> {{ person }} </td>
+                    <td> <button @click.prevent="removeFromPersons(person)"> X </button> </td>
+                </tr>
+            </table>
             <v-btn class="button" type="submit"> SUBMIT </v-btn>
+
         </v-form>
     </center>
 </template>
