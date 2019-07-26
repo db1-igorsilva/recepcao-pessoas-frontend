@@ -19,11 +19,11 @@
             <span v-show="errors.has('welcomeText')"> Field Texto de Boas-Vindas can't be null </span>
             <div class="datetime">
                 <label class="datetime time_label"> Data da Visita </label>
-                <input type="date" id="date" name="date" v-model="visit.date"/>
+                <input type="date" id="date" name="date" class="datetime__field" v-model="visit.date"/>
                 <label class="datetime time_label"> Início da Apresentação </label>
-                <input type="time" id="presentationStartTime" name="presentationStartTime" v-model="visit.presentationStartTime"/>
+                <input type="time" id="presentationStartTime" name="presentationStartTime" class="datetime__field" v-model="visit.presentationStartTime"/>
                 <label class="datetime time_label"> Fim da Apresentação </label>
-                <input type="time" id="presentationEndTime" name="presentationEndTime" v-model="visit.presentationEndTime"/>
+                <input type="time" id="presentationEndTime" name="presentationEndTime" class="datetime__field" v-model="visit.presentationEndTime"/>
             </div>
 
             <v-form class="not_full_width" @submit.prevent="addPerson()">
@@ -133,4 +133,9 @@ export default {
         padding-top: 10px
 .button
     border: 1px solid black
+.datetime__field
+    border-bottom: 1px solid gray
+    padding: 1%
+    padding-bottom: 0.5%
+    padding-left: 0
 </style>
