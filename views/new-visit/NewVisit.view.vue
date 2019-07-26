@@ -92,7 +92,11 @@ export default {
             
         },
         addPerson() {
-            this.persons.push(this.person);
+            if (this.person) {
+                this.persons.push(this.person);
+            } else {
+                alert('Every person needs to have a name.');
+            }
         },
         removeFromCreatedPersons (visitPerson) {
             VisitPersonService.delete(visitPerson, this.idToSave)
