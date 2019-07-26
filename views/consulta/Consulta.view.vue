@@ -51,7 +51,7 @@ export default {
                 value: 'guest'
             },
             {
-                text: 'Welcome Text',
+                text: 'W3lcome Text',
                 value: 'welcome_text'
             },
             {
