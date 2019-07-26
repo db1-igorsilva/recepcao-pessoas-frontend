@@ -66,12 +66,6 @@ export default {
         return {
             visit: new Visit(),
             id: this.$route.params.id,
-            headers: [
-                {
-                    text: 'name',
-                    value: 'name'
-                }
-            ],
             onCreatePersons: [],
             persons: [],
             person: ''
