@@ -6,16 +6,16 @@
             </v-flex>
             <input type="date" id="compareStartDate" name="compareStartDate" @input="compareStartDate = $event.target.value"/>
             <input type="date" id="compareEndDate" name="compareEndDate" @input="compareEndDate = $event.target.value"/>
-            <v-data-table :headers="headers" :items="filteredVisits" class="not_full_width">
+            <v-data-table :headers="headers" :items="filteredVisits" class="not_full_width elevation-1">
                 <template v-slot:items="filteredVisits">
-                    <td class="text-xs-right"> {{ filteredVisits.item.id }} </td>
-                    <td class="text-xs-right"> {{ filteredVisits.item.date }} </td>
-                    <td class="text-xs-right"> {{ filteredVisits.item.presentationStartTime }} </td>
-                    <td class="text-xs-right"> {{ filteredVisits.item.presentationEndTime }} </td>
-                    <td class="text-xs-right"> {{ filteredVisits.item.guest }} </td>
-                    <td class="text-xs-right"> {{ filteredVisits.item.welcomeText }} </td>
-                    <td class="text-xs-right"> <router-link :to="{name: 'altera', params: { id: filteredVisits.item.id }}"> <button> Update </button> </router-link> </td>
-                    <td class="text-xs-right"> <button @click="remove(filteredVisits.item)"> Delete </button> </td>
+                    <td> {{ filteredVisits.item.id }} </td>
+                    <td> {{ filteredVisits.item.date }} </td>
+                    <td> {{ filteredVisits.item.presentationStartTime }} </td>
+                    <td> {{ filteredVisits.item.presentationEndTime }} </td>
+                    <td> {{ filteredVisits.item.guest }} </td>
+                    <td> {{ filteredVisits.item.welcomeText }} </td>
+                    <td> <router-link :to="{name: 'altera', params: { id: filteredVisits.item.id }}"> <v-btn class="button"> Update </v-btn> </router-link> </td>
+                    <td> <v-btn class="button" @click="remove(filteredVisits.item)"> Delete </v-btn> </td>
                 </template>
             </v-data-table>
         </center>
@@ -109,4 +109,8 @@ export default {
 <style lang="sass" scoped>
 .not_full_width
     width: 95%
+.button
+    border: 1px solid black
+.td
+    width: 5px
 </style>
