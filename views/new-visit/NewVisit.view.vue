@@ -87,7 +87,7 @@ export default {
                     })
             })
             .then(() => {
-                this.$router.push({ name: 'consulta' });
+                this.$router.push({ name: 'new_visit' });
             })
             
         },
