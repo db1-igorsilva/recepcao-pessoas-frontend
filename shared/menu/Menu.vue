@@ -10,7 +10,7 @@
             <router-link to="/" class="menu__header">
                 <v-btn flat class="menu__header_button" style="color: #FFF"> Visits </v-btn>
             </router-link>
-            <router-link to="/cadastro" class="menu__header">
+            <router-link to="/new_visit" class="menu__header">
                 <v-btn flat class="menu__header_button" style="color: #FFF"> New Visit </v-btn>
             </router-link>
         </v-toolbar-items>
