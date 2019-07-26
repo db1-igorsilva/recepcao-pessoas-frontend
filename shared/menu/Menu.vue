@@ -8,10 +8,10 @@
 
         <v-toolbar-items>
             <router-link to="/" class="menu__header">
-                <v-btn flat class="menu__header_button" style="color: #FFF"> Consulta </v-btn>
+                <v-btn flat class="menu__header_button" style="color: #FFF"> Visits </v-btn>
             </router-link>
             <router-link to="/cadastro" class="menu__header">
-                <v-btn flat class="menu__header_button" style="color: #FFF"> Cadastro </v-btn>
+                <v-btn flat class="menu__header_button" style="color: #FFF"> New Visit </v-btn>
             </router-link>
         </v-toolbar-items>
     </v-toolbar>
