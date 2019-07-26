@@ -1,5 +1,5 @@
-import NewVisit from '../views/cadastro/Cadastro.view.vue';
-import Visits from '../views/consulta/Consulta.view.vue';
+import NewVisit from '../views/new-visit/NewVisit.view.vue';
+import Visits from '../views/visits/Visits.view.vue';
 export const routes = [
     { path: '/', component: Visits, name: 'visits' },
     { path: '/new_visit', component: NewVisit, name: 'new_visit' },
