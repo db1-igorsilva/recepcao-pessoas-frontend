@@ -33,7 +33,7 @@
 
             <v-form class="not_full_width" @submit.prevent="addPerson()">
                 <v-text-field
-                    label="Nome da Pessoa"
+                    label="Person"
                     :counter="160"
                     id="name"
                     name="name"
