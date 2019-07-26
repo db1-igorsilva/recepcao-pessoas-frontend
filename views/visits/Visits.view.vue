@@ -14,7 +14,7 @@
                     <td> {{ filteredVisits.item.presentationEndTime }} </td>
                     <td> {{ filteredVisits.item.guest }} </td>
                     <td> {{ filteredVisits.item.welcomeText }} </td>
-                    <td> <router-link style="text-decoration: none" :to="{name: 'altera', params: { id: filteredVisits.item.id }}"> <v-btn class="button"> Update </v-btn> </router-link> </td>
+                    <td> <router-link style="text-decoration: none" :to="{name: 'update', params: { id: filteredVisits.item.id }}"> <v-btn class="button"> Update </v-btn> </router-link> </td>
                     <td> <v-btn class="button" @click="remove(filteredVisits.item)"> Delete </v-btn> </td>
                 </template>
             </v-data-table>
