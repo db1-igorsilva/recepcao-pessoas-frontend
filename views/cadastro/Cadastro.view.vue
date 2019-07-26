@@ -24,10 +24,10 @@
                 <label class="datetime time_label"> Visit Date </label>
                 <input type="date" v-validate="'required'" id="date" name="date" class="datetime__field" v-model="visit.date"/>
 
-                <label class="datetime time_label"> Presentation Start Time </label>
+                <label class="datetime time_label"> Presentation Start </label>
                 <input type="time" id="presentationStartTime" name="presentationStartTime" class="datetime__field" v-model="visit.presentationStartTime"/>
 
-                <label class="datetime time_label"> Presentation End Time </label>
+                <label class="datetime time_label"> Presentation End </label>
                 <input type="time" id="presentationEndTime" name="presentationEndTime" class="datetime__field" v-model="visit.presentationEndTime"/>
             </div>
 
