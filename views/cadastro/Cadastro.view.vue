@@ -134,7 +134,7 @@ export default {
 .button
     border: 1px solid black
 .datetime__field
-    border-bottom: 1px solid gray
+    border-bottom: 1px solid #888
     padding: 1%
     padding-bottom: 0.5%
     padding-left: 0
