@@ -34,7 +34,7 @@
                     id="name"
                     name="name"
                     v-model="person"/>
-                <table class="not_full_width">
+                <table class="half_width">
                     <tr>
                         <td> NAME </td>
                         <td> DELETE </td>
@@ -48,10 +48,9 @@
                         <td> <button @click.prevent="removeFromPersons(person)"> X </button> </td>
                     </tr>
                 </table>
-                <button type="submit"> ADD PERSON </button>
+                <v-btn class="button" type="submit"> ADD PERSON </v-btn>
             </v-form>
-            <br><br><br>
-            <button type="submit"> SUBMIT </button>
+            <v-btn class="button" type="submit"> SUBMIT </v-btn>
         </v-form>
     </center>
 </template>
@@ -132,4 +131,6 @@ export default {
     .time_label
         padding-bottom: 10px
         padding-top: 10px
+.button
+    border: 1px solid black
 </style>
