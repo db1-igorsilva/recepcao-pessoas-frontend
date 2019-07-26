@@ -3,31 +3,31 @@
         <v-form class="not_full_width" @submit.prevent="save()">
 
             <v-text-field
-                label="Nome do Convidado"
+                label="Guest Name"
                 :counter="160"
                 v-validate="'required'"
                 id="guest"
                 name="guest"
                 v-model="visit.guest"/>
-            <span v-show="errors.has('guest')"> Field Nome do Convidado can't be null </span>
+            <span v-show="errors.has('guest')"> Field "Guest Name" can't be null </span>
 
             <v-text-field
-                label="Texto de Boas-Vindas"
+                label="W3lcome Text"
                 :counter="500"
                 v-validate="'required'"
                 id="welcomeText"
                 name="welcomeText"
                 v-model="visit.welcomeText"/>
-            <span v-show="errors.has('welcomeText')"> Field Texto de Boas-Vindas can't be null </span>
+            <span v-show="errors.has('welcomeText')"> Field "W3lcome Text" can't be null </span>
 
             <div class="datetime">
-                <label class="datetime time_label"> Data da Visita </label>
+                <label class="datetime time_label"> Visit Date </label>
                 <input type="date" v-validate="'required'" id="date" name="date" class="datetime__field" v-model="visit.date"/>
 
-                <label class="datetime time_label"> Início da Apresentação </label>
+                <label class="datetime time_label"> Presentation Start Time </label>
                 <input type="time" id="presentationStartTime" name="presentationStartTime" class="datetime__field" v-model="visit.presentationStartTime"/>
 
-                <label class="datetime time_label"> Fim da Apresentação </label>
+                <label class="datetime time_label"> Presentation End Time </label>
                 <input type="time" id="presentationEndTime" name="presentationEndTime" class="datetime__field" v-model="visit.presentationEndTime"/>
             </div>
 
